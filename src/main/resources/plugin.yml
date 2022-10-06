@@ -1,0 +1,13 @@
+name: PGenerators
+version: 1.0
+api-version: 1.16
+description: Ore generators plugin
+author: PHSS
+main: phss.pgenerators.PGenerators
+load: POSTWORLD
+depend:
+  - SuperiorSkyblock2
+commands:
+  generator:
+    description: gives a generator to specified player
+    usage: /<command> <args>

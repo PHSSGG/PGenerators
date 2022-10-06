@@ -1,0 +1,141 @@
+Config:
+  interval: 1
+
+Menus:
+  upgradeMenu:
+    name: "&bUpgrade Menu!"
+    rows: 3
+    items:
+      generator:
+        name: "&a&lGenerator info"
+        lore:
+          - ""
+          - "%name%"
+          - ""
+          - "&bLevel: %level%"
+          - "&bTime: %time% second(s)"
+          - "&bAmount dropped: %amount%"
+          - ""
+        id: "END_PORTAL_FRAME"
+        data: 0
+        glow: false
+        slot: 4
+      upgrade:
+        name: "&a&lUpgrade"
+        lore:
+          - ""
+          - "&bNext Level: %next%"
+          - "&bTime: %next_time% second(s)"
+          - "&bAmount dropped: %next_amount%"
+          - "&bPrice: $%price%"
+          - ""
+        id: "NETHER_STAR"
+        data: 0
+        slot: 5
+      destroy:
+        name: "&a&lDESTROY"
+        lore:
+          - ""
+          - "&bThis will put the item back in your inventory"
+          - "&bBut next time you place it, it will be level 1."
+          - ""
+        id: "WOODEN_PICKAXE"
+        data: 0
+        slot: 6
+    ornamentItems:
+      ornament1:
+        name: "&7STONE"
+        lore:
+          - "&7..."
+        id: "STONE"
+        data: 0
+        slot: 1
+  confirmMenu:
+    upgrade:
+      name: "Accept upgrade"
+      rows: 3
+      acceptItem:
+        name: "&aAccept"
+        lore:
+          - "You'll spend %price% to upgrade this generator to the level %next%"
+        id: "STONE"
+        data: 0
+        glow: false
+        slot: 4
+      denyItem:
+        name: "&cDeny"
+        lore:
+          - ""
+        id: "STONE"
+        data: 0
+        glow: false
+        slot: 6
+    destroy:
+      name: "Accept destroy"
+      rows: 3
+      acceptItem:
+        name: "&aAccept"
+        lore:
+          - "This will break the generator and reset it's level to 1."
+        id: "STONE"
+        data: 0
+        glow: false
+        slot: 4
+      denyItem:
+        name: "&cDeny"
+        lore:
+          - ""
+        id: "STONE"
+        data: 0
+        glow: false
+        slot: 6
+    ornamentItems:
+
+Generators:
+  generator1:
+    limitPerIsland: 5 # 5 generators of this type per island
+    name: "&6&l» &e&lOreGenerator &6&l«"
+    lore:
+      - '&bThis is an ore generator.'
+      - '&bYou can place it down and it will automatically drop ores.'
+      - '&bRight click the generator when it is placed to upgrade it.'
+      - '&bUpgraded generators do not keep there level when broke.'
+    id: "STONE"
+    data: 0
+    hologram:
+      - ""
+      - "&aOreGenerator"
+      - ""
+      - "&eLevel: &f%level%"
+      - ""
+    levels: # use only numbers on levels
+      1:
+        interval: 20
+        amount: 1
+      2:
+        price: 350000
+        interval: 15
+        amount: 1
+      3:
+        price: 400000
+        interval: 10
+        amount: 2
+    drops:
+      iron:
+        customNameAndLore: true
+        name: "&fIron"
+        lore:
+          - "&7This is an iron!"
+        id: "IRON_INGOT"
+        data: 0
+        enchantments:
+      emerald:
+        customNameAndLore: true
+        name: "&aEmerald"
+        lore:
+          - "&7This is an emerald!"
+        id: "EMERALD"
+        data: 0
+        hideEnchantments: true
+        enchantments:
+          - "knockback:1" # enchantment:level
